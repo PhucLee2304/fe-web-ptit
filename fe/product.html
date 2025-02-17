@@ -58,7 +58,7 @@
                         <p class="detail-value">2000 VND</p>
                     </div>
                 </div>
-            
+
                 <div class="size-quantity">
                     <div class="size">
                         <p class="size-label">Size</p>
@@ -78,7 +78,7 @@
                         <p id="size-quantity-info">1000 Available products for size M</p>
                     </div>
                 </div>
-            
+
 
                 <div class="product-actions">
                     <button>Add to cart</button>
@@ -91,12 +91,42 @@
 
     <!-- Reviews Section -->
     <section class="reviews-section">
-        <h3>REVIEWS</h3>
-        <p>5 out of 5</p>
-        <div class="review">
-            <p><strong>username</strong> 5 star</p>
-            <p>Order date: 2025-02-01</p>
-            <p>Comment</p>
+        <div class="overview">
+            <h3>REVIEWS</h3>
+            <p>5 out of 5</p>
+        </div>
+        <div class="filter">
+            <button class="filter-btn" data-rating="all">
+                <p>All (1)</p>
+            </button>
+            <button class="filter-btn" data-rating="5">
+                <p>5 star (1)</p>
+            </button>
+            <button class="filter-btn" data-rating="4">
+                <p>4 star (0)</p>
+            </button>
+            <button class="filter-btn" data-rating="3">
+                <p>3 star (0)</p>
+            </button>
+            <button class="filter-btn" data-rating="2">
+                <p>2 star (0)</p>
+            </button>
+            <button class="filter-btn" data-rating="1">
+                <p>1 star (0)</p>
+            </button>
+        </div>
+        <div class="reviews">
+            <div class="review" data-rating="5">
+                <div class="review-header">
+                    <img src="./asset/avatar.png" alt="User Avatar" class="review-avatar">
+                    <div class="review-info">
+                        <p><strong>username</strong> 5 star</p>
+                        <p>Order date: 2025-02-01</p>
+                    </div>
+                </div>
+                <p class="review-comment">Comment</p>
+            </div>
+            <!-- Additional reviews here -->
         </div>
     </section>
 
@@ -130,6 +160,26 @@
             let currentQuantity = parseInt(quantityInput.value);
             quantityInput.value = currentQuantity + 1;
         });
+
+        // JavaScript for filtering reviews based on rating
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const reviews = document.querySelectorAll('.review');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const rating = button.getAttribute('data-rating');
+
+                reviews.forEach(review => {
+                    const reviewRating = review.getAttribute('data-rating');
+                    if (reviewRating === rating || rating === 'all') {
+                        review.style.display = 'block';
+                    } else {
+                        review.style.display = 'none';
+                    }
+                });
+            });
+        });
+
 
     </script>
 </body>

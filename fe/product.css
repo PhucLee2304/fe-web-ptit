@@ -272,73 +272,76 @@ header .login img {
     background-color: #0097a7;
 }
 
-/* Reviews Section */
 .reviews-section {
     margin-top: 40px;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
-
-.reviews-section h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.reviews-section p {
-    font-size: 16px;
-    color: #333;
-}
-
-.review {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f4f4f4;
-    border-radius: 4px;
-}
-
-.review p {
-    margin: 5px 0;
-}
-
-/* Rating Section */
-.review p strong {
-    font-weight: bold;
-}
-
-.review p:first-child {
-    font-size: 16px;
-}
-
-.review p:nth-child(2) {
-    font-size: 14px;
-    color: #888;
-}
-
-.review p:nth-child(3) {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Pagination for reviews */
-.reviews-section .pagination {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
 }
 
-.reviews-section .pagination button {
-    padding: 10px;
+.overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter button {
+    padding: 10px 20px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.filter button p {
     font-size: 14px;
     color: #333;
 }
 
-.reviews-section .pagination button:hover {
+.review {
+    margin-top: 20px;
+    padding: 15px;
     background-color: #f4f4f4;
+    border-radius: 4px;
+    border: 2px solid #007bff;
+    display: none;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.review-comment {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Show reviews based on filter */
+[data-rating="5"],
+[data-rating="all"] {
+    display: block;
 }
