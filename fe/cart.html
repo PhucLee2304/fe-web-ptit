@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <title>Cart</title>
+</head>
+
+<body>
+    <header>
+        <div class="home">
+            <a href="#">
+                <img src="./asset/logo.png" alt="Home">
+                <p>BLUE LOCK</p>
+            </a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>
+                <img src="./asset/search.png" alt="Search">
+            </button>
+        </div>
+        <div class="cart">
+            <a href="#">
+                <img src="./asset/cart.png" alt="Cart">
+            </a>
+        </div>
+        <div class="login">
+            <a href="#">
+                <img src="./asset/avatar.png" alt="Avatar">
+            </a>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+<section class="cart-section">
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Product</th>
+                <th>Size</th>
+                <th>Rental</th>
+                <th>Selling</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="product-select"></td>
+                <td><img src="./asset/product.png" alt="Product" class="product-image"> Product Name</td>
+                <td>
+                    <select class="product-size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </td>
+                <td>1000 VND</td>
+                <td>2000 VND</td>
+                <td>
+                    <input type="number" class="product-quantity" value="1" min="1">
+                </td>
+                <td>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="cart-actions">
+        <button class="rent-now-btn">Rent now</button>
+        <button class="buy-now-btn">Buy now</button>
+    </div>
+</section>
+
+</body>
+
+</html>
