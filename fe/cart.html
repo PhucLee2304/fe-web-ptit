@@ -35,47 +35,73 @@
     </header>
 
     <!-- Cart Section -->
-<section class="cart-section">
-    <table class="cart-table">
-        <thead>
-            <tr>
-                <th>Select</th>
-                <th>Product</th>
-                <th>Size</th>
-                <th>Rental</th>
-                <th>Selling</th>
-                <th>Quantity</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="checkbox" class="product-select"></td>
-                <td><img src="./asset/product.png" alt="Product" class="product-image"> Product Name</td>
-                <td>
-                    <select class="product-size">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                </td>
-                <td>1000 VND</td>
-                <td>2000 VND</td>
-                <td>
-                    <input type="number" class="product-quantity" value="1" min="1">
-                </td>
-                <td>
-                    <button class="delete-btn">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="cart-actions">
-        <button class="rent-now-btn">Rent now</button>
-        <button class="buy-now-btn">Buy now</button>
-    </div>
-</section>
+    <section class="cart-section">
+        <!-- <form action="#" method="POST"> -->
+        <form>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Product</th>
+                        <th>Size</th>
+                        <th>Rental</th>
+                        <th>Selling</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="product-select"></td>
+                        <td>
+                            <a href="#">
+                                <img src="./asset/product.png" alt="Product" class="product-image"> Product Name
+                            </a>
+                        </td>
+                        <td>
+                            <select class="product-size" name="product_size">
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                            </select>
+                        </td>
+                        <td>1000 VND</td>
+                        <td>2000 VND</td>
+                        <td>
+                            <input type="number" class="product-quantity" value="1" min="1" name="product_quantity">
+                        </td>
+                        <td>
+                            <!-- Thêm input ẩn với ID sản phẩm để gửi yêu cầu xóa tới backend -->
+                            <!-- <input type="hidden" name="product_id" value="12345"> -->
+                            <!-- Thay '12345' bằng ID thực tế của sản phẩm -->
+                            <button type="submit" class="delete-btn"
+                                onclick="removeProductFromTable(event)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cart-actions">
+                <button type="submit" class="rent-now-btn" name="action" value="rent">Rent now</button>
+                <button type="submit" class="buy-now-btn" name="action" value="buy">Buy now</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- <script>
+        function removeProductFromTable(event) {
+            // Ngừng việc gửi form ngay lập tức để xử lý xóa trong giao diện người dùng
+            event.preventDefault();
+
+            // Xóa dòng trong bảng
+            const row = event.target.closest('tr');
+            row.remove();
+
+            // Gửi form để xóa sản phẩm từ backend (có thể sử dụng AJAX nếu không muốn tải lại trang)
+            event.target.closest('form').submit();
+        }
+    </script> -->
+
 
 </body>
 
