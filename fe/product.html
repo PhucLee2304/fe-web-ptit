@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="product.css">
+    <title>Product Details</title>
+</head>
+
+<body>
+    <header>
+        <div class="home">
+            <a href="#">
+                <img src="./asset/logo.png" alt="Home">
+                <p>BLUE LOCK</p>
+            </a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>
+                <img src="./asset/search.png" alt="Search">
+            </button>
+        </div>
+        <div class="cart">
+            <a href="#">
+                <img src="./asset/cart.png" alt="Cart">
+            </a>
+        </div>
+        <div class="login">
+            <a href="#">
+                <img src="./asset/avatar.png" alt="Avatar">
+            </a>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="category">
+            <a href="#">Category 1</a>
+            <p> / Product name</p>
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <img src="./asset/product.png" alt="Product">
+            </div>
+            <div class="product-info">
+                <h2>Product name</h2>
+                <p>Rating: 5.0 | Comments: 1k | Sold: 1k | Rent: 1k</p>
+                <div class="product-details">
+                    <div class="detail-row">
+                        <p class="detail-label">Rental</p>
+                        <p class="detail-value">1000 VND</p>
+                    </div>
+                    <div class="detail-row">
+                        <p class="detail-label">Selling</p>
+                        <p class="detail-value">2000 VND</p>
+                    </div>
+                </div>
+            
+                <div class="size-quantity">
+                    <div class="size">
+                        <p class="size-label">Size</p>
+                        <div class="sizes">
+                            <button class="size-btn active" data-size="M" data-quantity="1000">M</button>
+                            <button class="size-btn" data-size="L" data-quantity="500">L</button>
+                            <button class="size-btn" data-size="XL" data-quantity="300">XL</button>
+                        </div>
+                    </div>
+                    <div class="quantity">
+                        <p class="quantity-label">Quantity</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-decrease">-</button>
+                            <input type="number" value="1" min="1" id="quantity-input">
+                            <button class="quantity-increase">+</button>
+                        </div>
+                        <p id="size-quantity-info">1000 Available products for size M</p>
+                    </div>
+                </div>
+            
+
+                <div class="product-actions">
+                    <button>Add to cart</button>
+                    <button>Buy now</button>
+                    <button>Rent now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h3>REVIEWS</h3>
+        <p>5 out of 5</p>
+        <div class="review">
+            <p><strong>username</strong> 5 star</p>
+            <p>Order date: 2025-02-01</p>
+            <p>Comment</p>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to update quantity info based on size selection
+        const sizeButtons = document.querySelectorAll('.size-btn');
+        const sizeQuantityInfo = document.getElementById('size-quantity-info');
+        const quantityInput = document.getElementById('quantity-input');
+        const quantityDecrease = document.querySelector('.quantity-decrease');
+        const quantityIncrease = document.querySelector('.quantity-increase');
+
+        sizeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                sizeButtons.forEach(btn => btn.classList.remove('active')); // Remove active class from all buttons
+                this.classList.add('active'); // Add active class to clicked button
+
+                const size = this.getAttribute('data-size');
+                const quantity = this.getAttribute('data-quantity');
+                sizeQuantityInfo.textContent = `${quantity} Available products for size ${size}`;
+            });
+        });
+
+        quantityDecrease.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+            }
+        });
+
+        quantityIncrease.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+        });
+
+    </script>
+</body>
+
+</html>

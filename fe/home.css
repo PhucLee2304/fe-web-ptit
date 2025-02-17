@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header .home {
+    display: flex;
+    align-items: center;
+    /* text-decoration: none; */
+}
+
+header .home a {
+    display: flex;
+    align-items: center;
+    /* text-decoration: none; */
+}
+
+header .home img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .home p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+header .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    padding: 5px;
+    width: 600px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .search input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+header .search button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+header .search img {
+    width: 25px;
+    height: 25px;
+}
+
+header .cart,
+header .login {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+header .cart {
+    margin-left: auto;
+}
+
+header .login {
+    margin-left: 20px;
+}
+/* 
+header .cart a,
+header .login a {
+    text-decoration: none;
+} */
+
+header .cart img,
+header .login img {
+    height: 30px;
+    width: 30px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/* Main section */
+.main {
+    padding: 20px;
+}
+
+/* Categories Section */
+.categories h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Center the text */
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around; /* Reduce gap and align categories closer */
+    flex-wrap: wrap;
+    gap: 10px; /* Reduced gap between categories */
+}
+
+.category {
+    text-align: center;
+    flex: 1 1 22%;
+    max-width: 150px;
+}
+
+.category img {
+    width: 100%;
+    height: 100%; /* Make the image square */
+    object-fit: cover; /* Ensure the image covers the square area */
+    border-radius: 15px; /* Rounded corners */
+    margin-bottom: 10px;
+}
+
+.category p {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* Recommended Products Section */
+.recommended {
+    padding-top: 100px;
+}
+
+.recommended h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Center the text */
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #777;
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit;
+}
