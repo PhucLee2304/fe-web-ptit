@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Blue Lock</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="container">
+          <div class="nav-container">
+            <div class="home">
+              <a href="#">
+                <img src="./asset/logo.png" alt="Home" />
+                <p>BLUE LOCK</p>
+              </a>
+            </div>
+            <div class="nav-search">
+                <div class="search">
+                    <input type="text" placeholder="Search..." />
+                    <button>
+                      <img src="./asset/search.png" alt="Search" />
+                    </button>
+                  </div>
+            </div>
+            <div class="nav-wrapper">
+                <div class="cart">
+                    <a href="#">
+                      <img src="./asset/cart.png" alt="Cart" />
+                    </a>
+                  </div>
+                  <div class="login">
+                    <a href="#">
+                      <img src="./asset/avatar.png" alt="Avatar" />
+                    </a>
+                    <div class="login-wrapper">
+                        <div class="login-content">
+                            <div class="content-item"><a href="#">Profile</a></div>
+                            <div class="content-item"><a href="#">Change password</a></div>
+                            <div class="content-item"><a href="#">Log out</a></div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="profile">
+        <h2>My Profile</h2>
+        <p>Manage profile information to secure the account</p>
+        <!-- <form action="/save-profile" method="POST"> -->
+        <form>
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" name="full_name" placeholder="Enter your full name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address">
+
+            <label for="profile-image">Profile image</label>
+            <div class="profile-image-container">
+                <input type="file" id="profile-image" name="profile_image" class="profile-image-input">
+                <label for="profile-image" class="profile-image-label">Select image</label>
+            </div>
+
+            <button type="submit" class="save-btn">Save</button>
+        </form>
+    </div>
+</section>
+</body>
+
+</html>

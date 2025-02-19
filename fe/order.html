@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Blue Lock</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <div class="home">
+                        <a href="#">
+                            <img src="./asset/logo.png" alt="Home" />
+                            <p>BLUE LOCK</p>
+                        </a>
+                    </div>
+                    <div class="nav-search">
+                        <div class="search">
+                            <input type="text" placeholder="Search..." />
+                            <button>
+                                <img src="./asset/search.png" alt="Search" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="nav-wrapper">
+                        <div class="cart">
+                            <a href="#">
+                                <img src="./asset/cart.png" alt="Cart" />
+                            </a>
+                        </div>
+                        <div class="login">
+                            <a href="#">
+                                <img src="./asset/avatar.png" alt="Avatar" />
+                            </a>
+                            <div class="login-wrapper">
+                                <div class="login-content">
+                                    <div class="content-item"><a href="#">Profile</a></div>
+                                    <div class="content-item"><a href="#">Change password</a></div>
+                                    <div class="content-item"><a href="#">Log out</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section for Orders -->
+    <section class="orders-section">
+        <div class="order-filters">
+            <button class="filter-btn active" data-status="all" onclick="filterOrders('all')">All</button>
+            <button class="filter-btn" data-status="pending" onclick="filterOrders('pending')">Pending</button>
+            <button class="filter-btn" data-status="completed" onclick="filterOrders('completed')">Completed</button>
+            <button class="filter-btn" data-status="cancelled" onclick="filterOrders('cancelled')">Cancelled</button>
+        </div>
+    
+        <div class="order-item" data-status="completed">
+            <div class="order-item-header">
+                <img src="./asset/product.png" alt="Product" class="order-item-image">
+                <div class="order-item-info">
+                    <p><strong>Product Name</strong></p>
+                    <p>Size: S</p>
+                    <p>Quantity: 1</p>
+                </div>
+                <div class="order-status">
+                    <span>Complete</span>
+                </div>
+            </div>
+    
+            <div class="order-item-details">
+                <p><strong>Order Date:</strong> 2025-02-02</p>
+                <p><strong>Selling:</strong> 2000 VND</p>
+                <p><strong>Total amount:</strong> 2000 VND</p>
+            </div>
+    
+            <div class="order-actions">
+                <button class="review-btn">Review</button>
+                <button class="buy-again-btn">Buy again</button>
+            </div>
+        </div>
+    
+        <div class="order-item" data-status="pending">
+            <div class="order-item-header">
+                <img src="./asset/product.png" alt="Product" class="order-item-image">
+                <div class="order-item-info">
+                    <p><strong>Product Name</strong></p>
+                    <p>Size: M</p>
+                    <p>Quantity: 2</p>
+                </div>
+                <div class="order-status">
+                    <span>Pending</span>
+                </div>
+            </div>
+    
+            <div class="order-item-details">
+                <p><strong>Order Date:</strong> 2025-02-05</p>
+                <p><strong>Selling:</strong> 3000 VND</p>
+                <p><strong>Total amount:</strong> 6000 VND</p>
+            </div>
+    
+            <div class="order-actions">
+                <button class="review-btn">Review</button>
+                <button class="buy-again-btn">Buy again</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function filterOrders(status) {
+            const allOrders = document.querySelectorAll('.order-item');
+            allOrders.forEach(order => {
+                if (status === 'all' || order.getAttribute('data-status') === status) {
+                    order.style.display = 'block';
+                } else {
+                    order.style.display = 'none';
+                }
+            });
+    
+            // Highlight the active filter button
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`button[data-status="${status}"]`).classList.add('active');
+        }
+    </script>
+    
+</body>
+</html>
