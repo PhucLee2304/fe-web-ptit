@@ -13,17 +13,31 @@ body {
 }
 
 /* Header styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
+.container {
+    width: 1200px;
+    margin: 0 auto;
 }
 
-header .home {
+.navbar {
+    position: fixed;
+    /* top: 30px; */
+    top: 0;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    /* border-radius: 50px; */
+    padding: 0 15px;
+}
+
+.nav-container .home {
     display: flex;
     align-items: center;
 }
@@ -42,28 +56,30 @@ header .home p {
     font-size: 20px;
     font-weight: bold;
     color: #333;
+    padding-top: 5px;
 }
-
+.nav-container .nav-search {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 header .search {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 40px;
-    padding: 5px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
     width: 600px;
     height: 40px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 header .search input {
     width: 100%;
-    padding: 10px;
+    padding: auto;
     border: none;
     outline: none;
-    border-radius: 4px;
-    font-size: 14px;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 header .search button {
@@ -78,24 +94,73 @@ header .search img {
     height: 25px;
 }
 
+.nav-container .nav-wrapper {
+    display: flex;
+    /* margin-right: 20px; */
+}
 header .cart,
 header .login {
     display: flex;
     align-items: center;
-}
-
-header .cart {
-    margin-left: auto;
+    margin-left: 20px;
+    position: relative;
 }
 
 header .cart img,
 header .login img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+/* Ẩn dropdown mặc định */
+.nav-container .login-wrapper {
+    position: absolute;
+    top: 60px;
+    left: -100px;
+    right: -20px;
+    background: #e8e8e8;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Hiển thị khi hover vào .login */
+.nav-container .login:hover .login-wrapper {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tạo tam giác */
+.nav-container .login-wrapper::before {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Đặt tam giác phía trên */
+    left: 75%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #e8e8e8 transparent;
+}
+
+/* Tạo hiệu ứng hover cho từng item */
+.nav-container .login-wrapper .login-content .content-item a {
+    color: rgb(65, 65, 65);
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-container .login-wrapper .login-content .content-item a:hover {
+    background: #d3d3d3;
+    color: black;
 }
 
 .cart-section {
-    margin-top: 40px;
+    margin-top: 80px;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -150,7 +215,7 @@ header .login img {
     background-color: #e65a4f;
 }
 
-.cart-actions {
+.cart-actions .container{
     display: flex;
     justify-content: flex-end;
     gap: 10px;
