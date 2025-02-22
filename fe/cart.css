@@ -191,6 +191,11 @@ header .login img {
 }
 
 .cart-table .product-image {
+    display: flex;
+    align-items: center;
+}
+
+.cart-table .product-image img {
     width: 50px;
     height: auto;
     margin-right: 10px;
