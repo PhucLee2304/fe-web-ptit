@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLockPay Registration</title>
+  <link rel="stylesheet" href="walletRegister.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <div class="nav-container">
+          <div class="home">
+            <a href="home.html">
+              <img src="./asset/logo.png" alt="Home" />
+              <p>BLUE LOCK</p>
+            </a>
+          </div>
+          <div class="nav-search">
+            <div class="search">
+              <input type="text" placeholder="Search..." />
+              <button>
+                <img src="./asset/search.png" alt="Search" />
+              </button>
+            </div>
+          </div>
+          <div class="nav-wrapper">
+            <div class="cart">
+              <a href="cart.html">
+                <img src="./asset/cart.png" alt="Cart" />
+              </a>
+            </div>
+            <div class="login">
+              <!-- <a href="profile.html">
+                        <img src="./asset/avatar.png" alt="Avatar" />
+                      </a> -->
+              <img src="./asset/avatar.png" alt="Avatar">
+              <div class="login-wrapper">
+                <div class="login-content">
+                  <div class="content-item"><a href="profile.html">Profile</a></div>
+                  <div class="content-item"><a href="order.html">Orders</a></div>
+                  <div class="content-item"><a href="#">Change password</a></div>
+                  <div class="content-item"><a href="#">Log out</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="form-container">
+      <h2>BlueLockPay</h2>
+      <label for="bank-number">Bank Number</label>
+      <input type="text" id="bank-number" name="bank-number" placeholder="Enter bank number" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+      <button type="submit">Register</button>
+    </div>
+  </div>
+</body>
+
+</html>

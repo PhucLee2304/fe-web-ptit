@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Payment</title>
+    <link rel="stylesheet" href="bank.css">
+    <!-- Thêm CDN cho thư viện QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h2>QR Code Payment</h2>
+        <p>Total: 2000 VND</p>
+
+        <!-- Thẻ chứa mã QR sẽ được tạo ra -->
+        <div id="qr-code"></div>
+
+        <div class="input-group">
+            <label for="qr-code-input">Enter QR Code Data</label>
+            <input type="text" id="qr-code-input" name="qr-code-input" value="2000 VND">
+        </div>
+        <button class="confirm-button" id="generate-qr">Confirm</button>
+    </div>
+
+    <script>
+        // Khi trang được tải, tự động sinh mã QR
+        window.onload = function () {
+            var qrCodeData = "2000 VND"; // Dữ liệu bạn muốn mã hóa thành QR code
+
+            // Tạo mã QR
+            var qrCode = new QRCode(document.getElementById('qr-code'), {
+                text: qrCodeData, // Dữ liệu bạn muốn mã hóa thành QR
+                width: 256, // Kích thước chiều rộng của QR code
+                height: 256, // Kích thước chiều cao của QR code
+                colorDark: "#000000", // Màu sắc của mã QR
+                colorLight: "#ffffff", // Màu nền của mã QR
+                correctLevel: QRCode.CorrectLevel.H // Mức độ sai số (L - thấp nhất)
+            });
+        };
+
+    </script>
+</body>
+
+</html>

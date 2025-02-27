@@ -14,7 +14,7 @@
           <div class="container">
             <div class="nav-container">
               <div class="home">
-                <a href="#">
+                <a href="home.html">
                   <img src="./asset/logo.png" alt="Home" />
                   <p>BLUE LOCK</p>
                 </a>
@@ -29,17 +29,18 @@
               </div>
               <div class="nav-wrapper">
                   <div class="cart">
-                      <a href="#">
+                      <a href="cart.html">
                         <img src="./asset/cart.png" alt="Cart" />
                       </a>
                     </div>
                     <div class="login">
-                      <a href="#">
-                        <img src="./asset/avatar.png" alt="Avatar" />
-                      </a>
+                      <!-- <a href="#"> -->
+                      <img src="./asset/avatar.png" alt="Avatar" />
+                      <!-- </a> -->
                       <div class="login-wrapper">
                           <div class="login-content">
-                              <div class="content-item"><a href="#">Profile</a></div>
+                              <div class="content-item"><a href="profile.html">Profile</a></div>
+                              <div class="content-item"><a href="order.html">Orders</a></div>
                               <div class="content-item"><a href="#">Change password</a></div>
                               <div class="content-item"><a href="#">Log out</a></div>
                           </div>
@@ -70,7 +71,12 @@
             <tbody>
                 <tr>
                     <td><input type="checkbox" class="product-select"></td>
-                    <td class="product-image"><img src="./asset/product.png" alt="Product" ><p>Product Name</p></td>
+                    <td class="product-image">
+                      <a href="product.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img src="./asset/product.png" alt="Product" >
+                        <p style="color: black;">Product Name</p>
+                      </a>
+                    </td>
                     <td>
                         <select class="product-size">
                             <option value="S">S</option>
@@ -82,7 +88,7 @@
                     <td>1000 VND</td>
                     <td>2000 VND</td>
                     <td>
-                        <input type="number" class="product-quantity" value="1" min="1">
+                        <input type="number" class="product-quantity" style="width: 70px; text-align: center;" value="1" min="1">
                     </td>
                     <td>
                         <button class="delete-btn">Delete</button>

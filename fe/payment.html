@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <div class="order-form">
+        <form id="order-form">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input-group">
+                <label for="note">Note</label>
+                <textarea id="note" name="note"></textarea>
+            </div>
+            <div class="date-group">
+                <label for="start">Start</label>
+                <input type="date" id="start" name="start">
+                <label for="end">End</label>
+                <input type="date" id="end" name="end">
+            </div>
+            <div class="product-info">
+                <div class="product-item">
+                    <img src="./asset/product.png" alt="Product Image">
+                    <p>Product Name</p>
+                    <p>1000 VND</p>
+                </div>
+                <p>x1</p>
+            </div>
+            <div class="payment-method">
+                <label><input type="radio" name="payment-method" value="bank-transfer" id="bank-transfer"> Bank
+                    transfer</label>
+                <label><input type="radio" name="payment-method" value="e-wallet" id="e-wallet"> E-wallet</label>
+            </div>
+            <div class="total-info">
+                <p>Subtotal: 1000 VND</p>
+                <p>Shipping fee: 1000 VND</p>
+                <p>Total: 2000 VND</p>
+            </div>
+            <button type="button" class="order-button" id="order-button">Order now</button>
+        </form>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Enter E-wallet details</h2>
+            <form>
+                <label for="e-wallet-info">E-wallet info:</label>
+                <input type="text" id="e-wallet-info" name="e-wallet-info">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("order-button").addEventListener("click", function () {
+            if (document.getElementById("bank-transfer").checked) {
+                // Nếu chọn phương thức thanh toán bằng chuyển khoản ngân hàng, chuyển hướng đến trang khác
+                window.location.href = "bank.html"; // Thay đổi URL này với trang bạn muốn
+            } else if (document.getElementById("e-wallet").checked) {
+                // Nếu chọn phương thức thanh toán bằng e-wallet, hiển thị modal
+                document.getElementById("modal").style.display = "block";
+            }
+        });
+
+        // Đóng modal khi người dùng bấm vào dấu "x"
+        document.getElementById("close-btn").addEventListener("click", function () {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        // Đóng modal khi người dùng click ngoài modal
+        window.addEventListener("click", function (event) {
+            if (event.target === document.getElementById("modal")) {
+                document.getElementById("modal").style.display = "none";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueLockPay</title>
+    <link rel="stylesheet" href="walletHome.css">
+</head>
+
+<body>
+    <div class="payment-container">
+        <h2>BlueLockPay</h2>
+        <p>ID: BLP1</p>
+        <p>Balance: 1000 VND</p>
+        <div class="button-group">
+            <button class="add-funds" id="add-funds">Add funds</button>
+            <button class="make-transfer" id="make-transfer">Make a transfer</button>
+
+            <!-- Modal chứa 2 nút -->
+            <div id="choose-option-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-btn-option">&times;</span>
+                    <h3>Choose an option</h3>
+                    <button class="option-btn" id="option1">Option 1</button>
+                    <button class="option-btn" id="option2">Option 2</button>
+                </div>
+            </div>
+
+            <!-- Modal form khi nhấn vào Option 1 -->
+            <div id="form-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-form-btn">&times;</span>
+                    <h3>To other BlueLockPay</h3>
+                    <form>
+                        <label for="id">Enter the ID</label>
+                        <input type="text" id="id" name="id" required>
+                        <label for="amount">Enter the amount</label>
+                        <input type="text" id="amount" name="amount" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit" class="done-btn">Done</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Modal form khi nhấn vào Option 2 (Make a withdrawal) -->
+            <div id="withdrawal-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-withdrawal-btn">&times;</span>
+                    <h3>Make a withdrawal</h3>
+                    <form>
+                        <label for="withdrawal-amount">Enter the amount</label>
+                        <input type="text" id="withdrawal-amount" name="withdrawal-amount" required>
+                        <label for="withdrawal-password">Password</label>
+                        <input type="password" id="withdrawal-password" name="withdrawal-password" required>
+                        <button type="submit" class="done-btn">Done</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="fund-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn-fund">&times;</span>
+            <h3>Enter the amount</h3>
+            <form id="fund-form">
+                <label for="amount">Enter the amount</label>
+                <input type="text" id="amount" name="amount" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="done-btn">Done</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="wallet.js"></script>
+</body>
+
+</html>
