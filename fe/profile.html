@@ -45,37 +45,54 @@
                     </div>
                   </div>
             </div>
-            
           </div>
         </div>
       </div>
     </header>
 
     <div class="profile">
+      <div class="container">
         <h2>My Profile</h2>
         <p>Manage profile information to secure the account</p>
         <!-- <form action="/save-profile" method="POST"> -->
-        <form>
-            <label for="full-name">Full name</label>
-            <input type="text" id="full-name" name="full_name" placeholder="Enter your full name">
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
-
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Enter your address">
-
-            <label for="profile-image">Profile image</label>
-            <div class="profile-image-container">
-                <input type="file" id="profile-image" name="profile_image" class="profile-image-input">
-                <label for="profile-image" class="profile-image-label">Select image</label>
+        <form >
+          <div class="profile-form">
+            <div class="profile-infor">
+              <div class="infor-item">
+                <label for="full-name">Full name</label>
+                <input type="text" id="full-name" name="full_name" placeholder="Enter your full name">
+              </div>
+              
+              <div class="infor-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">  
+              </div>
+              
+              <div class="infor-item">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">  
+              </div>
+              
+              <div class="infor-item">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+              </div>
             </div>
+              
+            <div class="profile-img">
+              <div class="image-wrapper">
+                <img src="./asset/avatar.png" alt="Avartar">
+              </div>
+              <div class="profile-image-container">
+                  <input type="file" id="profile-image" name="profile_image" class="profile-image-input">
+                  <label for="profile-image" class="profile-image-label">Select image</label>
+              </div>
+            </div>
+          </div>
 
-            <button type="submit" class="save-btn">Save</button>
+          <button type="submit" class="save-btn">Save</button>
         </form>
+      </div> 
     </div>
 </section>
 </body>

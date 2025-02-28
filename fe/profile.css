@@ -22,19 +22,20 @@ body {
 
 .navbar {
   position: fixed;
-  top: 30px;
+  /* top: 30px; */
+  top: 0;
   z-index: 999;
-  height: 100px;
+  height: 80px;
   width: 100%;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .nav-container {
   display: flex;
   justify-content: space-between;
-  background: white;
   height: 80px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  /* border-radius: 50px; */
   padding: 0 15px;
 }
 
@@ -59,13 +60,11 @@ header .home p {
   color: #333;
   padding-top: 5px;
 }
-
 .nav-container .nav-search {
   height: 100%;
   display: flex;
   align-items: center;
 }
-
 header .search {
   display: flex;
   align-items: center;
@@ -99,9 +98,8 @@ header .search img {
 
 .nav-container .nav-wrapper {
   display: flex;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
-
 header .cart,
 header .login {
   display: flex;
@@ -140,8 +138,7 @@ header .login img {
 .nav-container .login-wrapper::before {
   content: "";
   position: absolute;
-  bottom: 100%;
-  /* Đặt tam giác phía trên */
+  bottom: 100%; /* Đặt tam giác phía trên */
   left: 75%;
   transform: translateX(-50%);
   border-width: 8px;
@@ -165,64 +162,103 @@ header .login img {
 }
 
 /* Profile Section Styles */
-.profile {
+.profile .container{
   width: 60%;
-  margin: 40px auto;
+  margin: 100px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile h2 {
+.profile .container h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #333;
 }
 
-.profile p {
+.profile .container p {
   font-size: 16px;
   color: #777;
+  margin-bottom: 40px;
+}
+
+.profile .profile-form {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  /* position: relative; */
+}
+
+.profile .profile-form .profile-infor {
+  flex: 6;
+}
+
+.profile .profile-form .profile-img {
+  flex: 4;
+}
+.profile .profile-form .infor-item {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.profile label {
+.profile .container .profile-form .infor-item label {
+  flex: 4;
   font-size: 16px;
-  margin-bottom: 5px;
-  display: block;
+  line-height: 40px;
   color: #333;
 }
 
-.profile input {
+.profile .container .profile-form .infor-item input {
+  flex: 6;
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 4px;
+  border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 16px;
   color: #333;
 }
 
-.profile .profile-image-container {
+.profile .container .profile-form .profile-img {
+  position: relative;
+}
+.profile .container .profile-form .profile-img .image-wrapper {
+  position: absolute;
+  top: -50px;
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
-.profile .profile-image-input {
+.profile .container .profile-form .profile-img img{
+  width: 200px;
+}
+
+.profile .container .profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  top: 140px;
+}
+
+.profile .container .profile-image-input {
   display: none;
 }
 
-.profile .profile-image-label {
+.profile .container .profile-image-label {
   padding: 10px 20px;
   background-color: #f4f4f4;
   color: #333;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
 }
 
-.profile .save-btn {
+.profile .container .save-btn {
   padding: 10px 20px;
+  margin-top: 20px;
   background-color: #00bcd4;
   color: white;
   border: none;
@@ -232,6 +268,6 @@ header .login img {
   font-size: 16px;
 }
 
-.profile .save-btn:hover {
+.profile .container .save-btn:hover {
   background-color: #0097a7;
 }
