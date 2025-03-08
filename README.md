@@ -47,3 +47,5 @@ Sau dó nếu hiển thị màn hình mà ta không nhập được thì nhập 
 ```bash
 git push origin your-branch-name
 ```
+
+6. git diff --name-only --diff-filter=A HEAD..different_branch | ForEach-Object { git checkout different_branch -- $_ }

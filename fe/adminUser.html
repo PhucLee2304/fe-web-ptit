@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="adminUser.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><strong>Dashboard</strong></li>
+                <li>User</li>
+                <li>Product</li>
+                <li>Item</li>
+                <li>Order</li>
+                <li>Review</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2 id="count">Total: 1</h2>
+            </div>
+
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Full name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Join Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img id="avatar" src="user-icon.png" alt="User" class="user-avatar"
+                                onerror="this.onerror=null; this.src='../asset/avatar.png';"> username</td>
+                        <td id="email">email</td>
+                        <td id="fullName">FN</td>
+                        <td id="address">address</td>
+                        <td id="phone">phone</td>
+                        <td id="created">2025-xx-xx</td>
+                        <td id="status">1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <a href="./adminUser.html"></a> -->
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="../js/header.js"></script> -->
+    <script src="./adminUser.js"></script>
+</body>
+
+</html>
