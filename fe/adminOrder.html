@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Dashboard</title>
+    <link rel="stylesheet" href="adminOrder.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><strong>Dashboard</strong></li>
+                <li>User</li>
+                <li>Product</li>
+                <li>Item</li>
+                <li>Order</li>
+                <li>Review</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2>Total: 1</h2>
+            </div>
+
+            <div class="status-filter">
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter">
+                    <option value="all">All</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <!-- Add other statuses here if needed -->
+                </select>
+            </div>
+
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product</th>
+                        <th>User</th>
+                        <th>Created on</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="product-image.jpg" alt="Product" class="product-image"> Product name</td>
+                        <td>User 1</td>
+                        <td>2025-xx-xx</td>
+                        <td>2000 VND</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="product-image.jpg" alt="Product" class="product-image"> Product name</td>
+                        <td>User 1</td>
+                        <td>2025-xx-xx</td>
+                        <td>2000 VND</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./adminOrder.js"></script>
+</body>
+
+</html>
