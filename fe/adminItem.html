@@ -9,186 +9,231 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <ul>
-                <li><strong>Dashboard</strong></li>
-                <li>User</li>
-                <li>Product</li>
-                <li>Item</li>
-                <li>Order</li>
-                <li>Review</li>
-            </ul>
+    <header>
+        <div class="navbar">
+          <div class="container">
+            <div class="nav-container">
+              <div class="home">
+                <a href="#">
+                  <img src="./asset/logo.png" alt="Home" />
+                  <p>BLUE LOCK</p>
+                </a>
+              </div>
+              <div class="nav-search">
+                  <div class="search">
+                      <input type="text" placeholder="Search..." />
+                      <button>
+                        <img src="./asset/search.png" alt="Search" />
+                      </button>
+                    </div>
+              </div>
+              <div class="nav-wrapper">
+                  <div class="cart">
+                      <a href="#">
+                        <img src="./asset/cart.png" alt="Cart" />
+                      </a>
+                    </div>
+                    <div class="login">
+                      <a href="#">
+                        <img src="./asset/avatar.png" alt="Avatar" />
+                      </a>
+                      <div class="login-wrapper">
+                          <div class="login-content">
+                              <div class="content-item"><a href="#">Profile</a></div>
+                              <div class="content-item"><a href="#">Change password</a></div>
+                              <div class="content-item"><a href="#">Log out</a></div>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </header>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="header">
-                <!-- Để 2 thứ này nằm cạnh nhau -->
-                <h2 id="total">Total: 3</h2>
-                <button class="add-btn" id="addModal">Add</button>
+    <div class="content">
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul>
+                    <li><strong>Dashboard</strong></li>
+                    <li>User</li>
+                    <li>Product</li>
+                    <li>Item</li>
+                    <li>Order</li>
+                    <li>Review</li>
+                </ul>
             </div>
-
-            <div class="filter-category">
-                <label for="category-filter">Filter by Category</label>
-                <select class="form-input" id="category-filter">
-                    <option value="1">Category 1</option>
-                    <option value="2">Category 2</option>
-                </select>
-            </div>
-
-            <table class="product-table">
-                <thead>
-                    <tr>
-                        <th id="image"><img src="" alt=""></th>
-                        <th id="product">Product</th>
-                        <th id="category">Category</th>
-                        <th id="rental">Rental</th>
-                        <th id="selling">Selling</th>
-                        <th id="size-S">Size S</th>
-                        <th id="size-M">Size M</th>
-                        <th id="size-L">Size L</th>
-                        <th id="size-XL">Size XL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Product 1 -->
-                    <tr>
-                        <td><img src="image1.jpg" alt="Product 1" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
-                        <td>Product 1</td>
-                        <td>Category 1</td>
-                        <td>100</td>
-                        <td>200</td>
-                        <td>50</td>
-                        <td>30</td>
-                        <td>20</td>
-                        <td>10</td>
-                        <td>
-                            <button class="update-btn" data-id="1">Update</button>
-                            <button class="delete-btn" data-id="1">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Product 2 -->
-                    <tr>
-                        <td><img src="image2.jpg" alt="Product 2" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
-                        <td>Product 2</td>
-                        <td>Category 2</td>
-                        <td>150</td>
-                        <td>300</td>
-                        <td>60</td>
-                        <td>40</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>
-                            <button class="update-btn" data-id="2">Update</button>
-                            <button class="delete-btn" data-id="2">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Product 3 -->
-                    <tr>
-                        <td><img src="image3.jpg" alt="Product 3" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
-                        <td>Product 3</td>
-                        <td>Category 1</td>
-                        <td>200</td>
-                        <td>400</td>
-                        <td>70</td>
-                        <td>50</td>
-                        <td>40</td>
-                        <td>20</td>
-                        <td>
-                            <button class="update-btn" data-id="3">Update</button>
-                            <button class="delete-btn" data-id="3">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Modal for adding new product -->
-            <div class="modal" id="productModal">
-                <div class="modal-content">
-                    <span class="close-btn" id="closeAddModal">&times;</span>
-                    <h2>Add Product</h2>
-                    <div class="product-form">
-                        <label for="name-add">Name</label>
-                        <input type="text" placeholder="Name" class="form-input" id="name-add">
-
-                        <label for="category-add">Category</label>
-                        <select class="form-input" id="category-add">
-                            <option value="1">Category 1</option>
-                            <option value="2">Category 2</option>
-                        </select>
-
-                        <label for="rental-add">Rental Price</label>
-                        <input type="number" placeholder="Rental price" class="form-input" id="rental-add" value="1" min="0">
-
-                        <label for="selling-add">Selling Price</label>
-                        <input type="number" placeholder="Selling price" class="form-input" id="selling-add" value="1" min="0">
-
-                        <div id="size-quantity-container">
-                            <label for="sizeS-add">Size S Quantity</label>
-                            <input type="number" placeholder="Size S Quantity" class="form-input" id="sizeS-add" value="0">
-
-                            <label for="sizeM-add">Size M Quantity</label>
-                            <input type="number" placeholder="Size M Quantity" class="form-input" id="sizeM-add" value="0">
-
-                            <label for="sizeL-add">Size L Quantity</label>
-                            <input type="number" placeholder="Size L Quantity" class="form-input" id="sizeL-add" value="0">
-
-                            <label for="sizeXL-add">Size XL Quantity</label>
-                            <input type="number" placeholder="Size XL Quantity" class="form-input" id="sizeXL-add" value="0">
+    
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="header">
+                    <!-- Để 2 thứ này nằm cạnh nhau -->
+                    <h2 id="total">Total: 3</h2>
+                    <button class="add-btn" id="addModal">Add</button>
+                </div>
+    
+                <div class="filter-category">
+                    <label for="category-filter">Filter by Category</label>
+                    <select class="form-input" id="category-filter">
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                    </select>
+                </div>
+    
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th id="image"><img src="" alt=""></th>
+                            <th id="product">Product</th>
+                            <th id="category">Category</th>
+                            <th id="rental">Rental</th>
+                            <th id="selling">Selling</th>
+                            <th id="size-S">Size S</th>
+                            <th id="size-M">Size M</th>
+                            <th id="size-L">Size L</th>
+                            <th id="size-XL">Size XL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product 1 -->
+                        <tr>
+                            <td><img src="./asset/product.png" alt="Product 1" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
+                            <td>Product 1</td>
+                            <td>Category 1</td>
+                            <td>100</td>
+                            <td>200</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>20</td>
+                            <td>10</td>
+                            <td>
+                                <button class="update-btn" data-id="1">Update</button>
+                                <button class="delete-btn" data-id="1">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Product 2 -->
+                        <tr>
+                            <td><img src="./asset/product.png" alt="Product 2" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
+                            <td>Product 2</td>
+                            <td>Category 2</td>
+                            <td>150</td>
+                            <td>300</td>
+                            <td>60</td>
+                            <td>40</td>
+                            <td>30</td>
+                            <td>15</td>
+                            <td>
+                                <button class="update-btn" data-id="2">Update</button>
+                                <button class="delete-btn" data-id="2">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Product 3 -->
+                        <tr>
+                            <td><img src="./asset/product.png" alt="Product 3" style="width: 50px; height: 50px; object-fit: cover;" onerror="this.onerror=null; this.src='../asset/product.png';"></td>
+                            <td>Product 3</td>
+                            <td>Category 1</td>
+                            <td>200</td>
+                            <td>400</td>
+                            <td>70</td>
+                            <td>50</td>
+                            <td>40</td>
+                            <td>20</td>
+                            <td>
+                                <button class="update-btn" data-id="3">Update</button>
+                                <button class="delete-btn" data-id="3">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <!-- Modal for adding new product -->
+                <div class="modal" id="productModal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="closeAddModal">&times;</span>
+                        <h2>Add Product</h2>
+                        <div class="product-form">
+                            <label for="name-add">Name</label>
+                            <input type="text" placeholder="Name" class="form-input" id="name-add">
+    
+                            <label for="category-add">Category</label>
+                            <select class="form-input" id="category-add">
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                            </select>
+    
+                            <label for="rental-add">Rental Price</label>
+                            <input type="number" placeholder="Rental price" class="form-input" id="rental-add" value="1" min="0">
+    
+                            <label for="selling-add">Selling Price</label>
+                            <input type="number" placeholder="Selling price" class="form-input" id="selling-add" value="1" min="0">
+    
+                            <div id="size-quantity-container">
+                                <label for="sizeS-add">Size S Quantity</label>
+                                <input type="number" placeholder="Size S Quantity" class="form-input" id="sizeS-add" value="0">
+    
+                                <label for="sizeM-add">Size M Quantity</label>
+                                <input type="number" placeholder="Size M Quantity" class="form-input" id="sizeM-add" value="0">
+    
+                                <label for="sizeL-add">Size L Quantity</label>
+                                <input type="number" placeholder="Size L Quantity" class="form-input" id="sizeL-add" value="0">
+    
+                                <label for="sizeXL-add">Size XL Quantity</label>
+                                <input type="number" placeholder="Size XL Quantity" class="form-input" id="sizeXL-add" value="0">
+                            </div>
+    
+                            <label for="image-add">Product image</label>
+                            <input type="file" class="form-input" id="image-add">
+    
+                            <button class="add-btn" id="addProduct">Add</button>
                         </div>
-
-                        <label for="image-add">Product image</label>
-                        <input type="file" class="form-input" id="image-add">
-
-                        <button class="add-btn" id="addProduct">Add</button>
                     </div>
                 </div>
-            </div>
-
-            <!-- Modal for updating product -->
-            <div class="modal" id="updateModal">
-                <div class="modal-content">
-                    <span class="close-btn" id="closeUpdateModal">&times;</span>
-                    <h2>Update Product</h2>
-                    <div class="product-form">
-                        <label for="name-update">Product Name</label>
-                        <input type="text" placeholder="Product Name" class="form-input" id="name-update">
-
-                        <label for="category-update">Category</label>
-                        <select class="form-input" id="category-update">
-                            <option value="1">Category 1</option>
-                            <option value="2">Category 2</option>
-                        </select>
-
-                        <label for="rental-update">Rental Price</label>
-                        <input type="number" placeholder="Rental price" class="form-input" id="rental-update">
-
-                        <label for="selling-update">Selling Price</label>
-                        <input type="number" placeholder="Selling price" class="form-input" id="selling-update">
-
-                        <label for="sizeS-update">Size S Quantity</label>
-                        <input type="number" placeholder="Size S Quantity" class="form-input" id="sizeS-update">
-
-                        <label for="sizeM-update">Size M Quantity</label>
-                        <input type="number" placeholder="Size M Quantity" class="form-input" id="sizeM-update">
-
-                        <label for="sizeL-update">Size L Quantity</label>
-                        <input type="number" placeholder="Size L Quantity" class="form-input" id="sizeL-update">
-
-                        <label for="sizeXL-update">Size XL Quantity</label>
-                        <input type="number" placeholder="Size XL Quantity" class="form-input" id="sizeXL-update">
-
-                        <label for="image-update">Product image</label>
-                        <input type="file" class="form-input" id="image-update">
-
-                        <button class="add-btn" id="updateProductBtn">Update</button>
+    
+                <!-- Modal for updating product -->
+                <div class="modal" id="updateModal">
+                    <div class="modal-content">
+                        <span class="close-btn" id="closeUpdateModal">&times;</span>
+                        <h2>Update Product</h2>
+                        <div class="product-form">
+                            <label for="name-update">Product Name</label>
+                            <input type="text" placeholder="Product Name" class="form-input" id="name-update">
+    
+                            <label for="category-update">Category</label>
+                            <select class="form-input" id="category-update">
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                            </select>
+    
+                            <label for="rental-update">Rental Price</label>
+                            <input type="number" placeholder="Rental price" class="form-input" id="rental-update">
+    
+                            <label for="selling-update">Selling Price</label>
+                            <input type="number" placeholder="Selling price" class="form-input" id="selling-update">
+    
+                            <label for="sizeS-update">Size S Quantity</label>
+                            <input type="number" placeholder="Size S Quantity" class="form-input" id="sizeS-update">
+    
+                            <label for="sizeM-update">Size M Quantity</label>
+                            <input type="number" placeholder="Size M Quantity" class="form-input" id="sizeM-update">
+    
+                            <label for="sizeL-update">Size L Quantity</label>
+                            <input type="number" placeholder="Size L Quantity" class="form-input" id="sizeL-update">
+    
+                            <label for="sizeXL-update">Size XL Quantity</label>
+                            <input type="number" placeholder="Size XL Quantity" class="form-input" id="sizeXL-update">
+    
+                            <label for="image-update">Product image</label>
+                            <input type="file" class="form-input" id="image-update">
+    
+                            <button class="add-btn" id="updateProductBtn">Update</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
