@@ -57,7 +57,7 @@ header .home p {
 .nav-container .nav-search {
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: center
 }
 header .search {
     display: flex;
